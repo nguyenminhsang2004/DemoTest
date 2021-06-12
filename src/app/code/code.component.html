@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-auto d-flex flex-column">
+            <button class="btn btn-primary" (click)="isShow = !isShow">
+                {{isShow? 'Đóng' :  'Bài tập'}}
+            </button>
+            <button class="btn btn-secondary mt-3" (click)="saveFile()">Lưu file</button>
+        </div>
+        <div class="col-auto" [class.p-0]="!isShow">
+            <div class="exercises horizontial-collapse" [class.show]="isShow" [innerHtml]="html">
+
+            </div>
+        </div>
+        <div class="col">
+            <div style="height: 500px" class="position-relative">
+                <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="code">
+                </ngx-monaco-editor>
+                <button class="btn btn-primary position-absolute" 
+                        style="top: 0; right: 0; margin-top: 19px; margin-right: 15px;" (click)="code=''">
+                    Làm mới
+                </button>
+            </div>
+            <div class="test">
+                <div class="text">
+                    KẾT QUẢ
+                </div>
+                <div class="result">
+                    {{result}}
+                </div>
+                <div class="btn-build" (click)="submitCode()">
+                    CHẠY
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+
+.container-fluid {
+    background-color: rgb(218, 216, 216);
+    height: 100vh;
+    padding: 1rem;
+    .row{
+        height: 100%;
+        .col, .col-auto{
+            height: 100%;
+        }
+    }
+    .exercises {
+        background-color: white;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+ngx-monaco-editor{
+    height: calc(100% - 100px);
+    width: 100%;
+}
+
+.horizontial-collapse{
+    width: 0px !important;
+    -webkit-transition: width 0.35s ease;
+    -moz-transition: width 0.35s ease;
+    -o-transition: width 0.35s ease;
+    transition: width 0.35s ease;
+    &.show{
+        width: 500px !important;
+        &.exercises {
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+
+        &.test{
+            background-color: rgb(85, 79, 79);
+        }
+        
+        &.text{
+            background-color: rgb(78, 71, 71);
+            color: rgb(26, 248, 82);
+        }
+        
+        &.result{
+            background-color: rgb(206, 191, 191);
+        }
+        
+        &.btn-build{
+            background-color:rgb(52, 14, 158);
+            color: honeydew;
+        }
+    }
+}
+
+
+.test{
+    background-color: rgb(85, 79, 79);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.text{
+    background-color: rgb(78, 71, 71);
+    color: rgb(26, 248, 82);
+    font-weight: bold;
+    font-size: 20px;
+    height: 5vh;
+}
+
+.result{
+    background-color: rgb(206, 191, 191);
+    font-size: 17px;
+    height: 75px;
+    padding-left: 5px;
+}
+
+.btn-build{
+    background-color:rgb(52, 14, 158);
+    color: honeydew;
+    font-size: 20px;
+    width: 125px;
+    height: 40px;
+    border-radius: 7px;
+    align-self: flex-end;
+    margin-right: 40px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
